@@ -14,10 +14,28 @@ namespace temperature.test {
 
             x.Should ().Be (expectedResult);
         }
+    
+        [Theory (DisplayName = "เปลี่ยนค่า องศา Fahrenheit ให้เป็น Celsius ได้สำเร็จ")]
+        [InlineData (98.6, 37)]
+         public void TestConvertFahrenheitToCelsiusSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertFahrenheitToCelsius (input);
+
+            x.Should ().Be (expectedResult);
+        }
 
         [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Celsius ได้สำเร็จ")]
         [InlineData (363.15, 90)]
         public void ConvertKelvinToCelsiusSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertKelvinToCelsius (input);
+
+            x.Should ().Be (expectedResult);
+        }
+
+        [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Celsius ได้สำเร็จ")]
+        [InlineData (600, 326.85)]
+        public void TestConvertKelvinToCelsiusSuccess (double input, double expectedResult) {
             var cal = new TempCalculator ();
             var x = cal.ConvertKelvinToCelsius (input);
 
@@ -33,9 +51,27 @@ namespace temperature.test {
             x.Should ().Be (expectedResult);
         }
 
+        [Theory (DisplayName = "เปลี่ยนค่า องศา celsius ให้เป็น Fahrenheit ได้สำเร็จ")]
+        [InlineData (100, 212)]
+        public void TestConvertCelsiusToFahrenheitSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertCelsiusToFahrenheit (input);
+
+            x.Should ().Be (expectedResult);
+        }
+
         [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Fahrenheit ได้สำเร็จ")]
         [InlineData (90, -297.67)]
         public void ConvertKelvinToFahrenheitSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertKelvinToFahrenheit (input);
+
+            x.Should ().Be (expectedResult);
+        }
+
+        [Theory (DisplayName = "เปลี่ยนค่า องศา Kelvin ให้เป็น Fahrenheit ได้สำเร็จ")]
+        [InlineData (990, 1322.33)]
+        public void TestConvertKelvinToFahrenheitSuccess (double input, double expectedResult) {
             var cal = new TempCalculator ();
             var x = cal.ConvertKelvinToFahrenheit (input);
 
@@ -51,9 +87,27 @@ namespace temperature.test {
             x.Should ().Be (expectedResult);
         }
 
+        [Theory (DisplayName = "เปลี่ยนค่า องศา Fahrenheit ให้เป็น Kelvin ได้สำเร็จ")]
+        [InlineData (1322.33, 990)]
+        public void TestConvertFahrenheitToKelvinSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertFahrenheitToKelvin (input);
+
+            x.Should ().Be (expectedResult);
+        }
+
         [Theory (DisplayName = "เปลี่ยนค่า องศา celsius ให้เป็น Fahrenheit ได้สำเร็จ")]
         [InlineData (90, 363.15)]
         public void ConvertCelsiusToKelvinSuccess (double input, double expectedResult) {
+            var cal = new TempCalculator ();
+            var x = cal.ConvertCelsiusToKelvin (input);
+
+            x.Should ().Be (expectedResult);
+        }
+
+        [Theory (DisplayName = "เปลี่ยนค่า องศา celsius ให้เป็น Fahrenheit ได้สำเร็จ")]
+        [InlineData (898, 1171.15)]
+        public void TestConvertCelsiusToKelvinSuccess (double input, double expectedResult) {
             var cal = new TempCalculator ();
             var x = cal.ConvertCelsiusToKelvin (input);
 
